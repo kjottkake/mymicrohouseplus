@@ -5,14 +5,15 @@ const locationSchema = new mongoose.Schema({
       longitude: { type: Number, required: true },
     });
 
-const weatherSchema = new mongoose.Schema({
-      temperature: {type: Number, required: true},
-      humidity: {type: Number, required: true},
-      pressure: {type: Number, required: true},
-      conditions: {type: String, required: true},
-      uvIndex: {type: Number},
-      
-});
+    const weatherSchema = new mongoose.Schema({
+      temperature: { type: Number, required: true },
+      conditions: { type: String, required: true },
+      uvIndex: { type: Number },
+      sunrise: { type: Date },
+      sunset: { type: Date },
+      strongestLightTime: { type: Date },
+      weakestLightTime: { type: Date },
+    });
 
 const sunlightSchema = new mongoose.Schema({
       sunrise: { type: Date, required: true },
