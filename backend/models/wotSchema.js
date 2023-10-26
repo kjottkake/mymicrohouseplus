@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const locationSchema = new mongoose.Schema({
-      latitude: { type: Number, required: true },
-      longitude: { type: Number, required: true },
+      lat: { type: Number, required: true },
+      lon: { type: Number, required: true },
     });
 
     const weatherSchema = new mongoose.Schema({
