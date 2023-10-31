@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
@@ -31,6 +32,15 @@ app.get('/', (req, res) => {
     app.listen(port, () => {
       console.log(`Server is running on http://localhost:${port}`);
     })
+
+    /** 
+     * 
+     * -Temperature
+-Weather Conditions (Rain, Snow, Sun)
+-UV (how strong sun is)
+-Sunrise Sunset Times
+-Times for when sunlight is strongest/weakest
+    */
 
 
 
