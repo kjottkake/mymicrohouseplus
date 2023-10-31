@@ -12,6 +12,9 @@ app.use(bodyParser.json());
 const sensorController = require('./controllers/sensorController');
 app.use('/', sensorController);
 
+const userController = require('./controllers/userController');
+app.use('/user', userController); 
+
 mongoose.connect('mongodb://127.0.0.1:27017/mymicrohouseplus', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -33,14 +36,7 @@ app.get('/', (req, res) => {
       console.log(`Server is running on http://localhost:${port}`);
     })
 
-    /** 
-     * 
-     * -Temperature
--Weather Conditions (Rain, Snow, Sun)
--UV (how strong sun is)
--Sunrise Sunset Times
--Times for when sunlight is strongest/weakest
-    */
+
 
 
 
