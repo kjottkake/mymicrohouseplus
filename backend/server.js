@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
@@ -10,6 +11,9 @@ app.use(bodyParser.json());
 
 const sensorController = require('./controllers/sensorController');
 app.use('/', sensorController);
+
+const userController = require('./controllers/userController');
+app.use('/user', userController); 
 
 mongoose.connect('mongodb://127.0.0.1:27017/mymicrohouseplus', {
   useNewUrlParser: true,
@@ -31,6 +35,8 @@ app.get('/', (req, res) => {
     app.listen(port, () => {
       console.log(`Server is running on http://localhost:${port}`);
     })
+
+
 
 
 
