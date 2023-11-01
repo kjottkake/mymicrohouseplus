@@ -19,7 +19,7 @@ router.post('/model', async (req, res) => {
     const apiKey = 'key=09c7b9d06c7d426a960185107232610';
     console.log('API Key:', apiKey); // Add this line
     
-    const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=60.79,10.68,Mustad`; 
+    const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=60.79,10.68,Mustad&days=10`; 
 
     const forecastApiResponse = await axios.get(forecastApiUrl);
     const forecastData = forecastApiResponse.data;
