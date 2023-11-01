@@ -8,17 +8,18 @@ const locationSchema = new mongoose.Schema({
     const weatherSchema = new mongoose.Schema({
       //conditions: { type: String, required: true },
      // temperature: { type: Number, required: true },
-      conditions: { type: String, required: true },
+      conditions: { type: String},
       uvIndex: { type: Number },
-      //sunrise: { type: Date },
+     // sunrise: { type: Date },
       //sunset: { type: Date },
-      //strongestLightTime: { type: Date },
-      //weakestLightTime: { type: Date },
+      strongestLightTime: { type: Date },
+      weakestLightTime: { type: Date },
     });
 
+    
 const sunlightSchema = new mongoose.Schema({
-      sunrise: { type: Date, required: true },
-      sunset: { type: Date, required: true },
+      sunrise: { type: Date},
+      sunset: { type: Date},
       strongestLightTime: { type: Date },
       weakestLightTime: { type: Date },
     });
@@ -37,7 +38,7 @@ const sunlightSchema = new mongoose.Schema({
       //uv: { type: Number },
       //movement: { type: movementSchema },
       sunlight: { type: sunlightSchema },
-    }, { timestamps: true }); // Adds createdAt and updatedAt timestamps
+    }, { timestamps: true });
     
     const DataModel = mongoose.model('Data', dataSchema);
     
