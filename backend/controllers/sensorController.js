@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 const axios = require('axios');
 const DataModel = require('../models/wotSchema');
 const router = express.Router();
@@ -13,9 +14,10 @@ router.post('/model', async (req, res) => {
       return res.status(400).json({ message: 'Latitude and longitude are required.' });
     }
 
-    const apiKey = process.env.WEATHER_API_KEY;
+    const apiKey = '09c7b9d06c7d426a960185107232610';
+    console.log('API Key:', apiKey); // Add this line
     
-    const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=${lat},${lon}` 
+    const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=${lat},${lon}`; 
 
     const forecastApiResponse = await axios.get(forecastApiUrl);
     const forecastData = forecastApiResponse.data;
@@ -57,6 +59,28 @@ router.get('/model', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+router.get('/model/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).json({ message: 'Invalid ID format.' });
+    }
+
+    const data = await DataModel.findById(id);
+
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found.' });
+    }
+
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
 
 router.put('/model/:id', async (req, res) => {
   try {
