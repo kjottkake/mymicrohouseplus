@@ -29,5 +29,24 @@ router.post('/register', async (req, res) => {
   }
 });
 
+router.get('/:username', async (req, res) => {
+      try {
+        const { username } = req.params;
+        if (!username) {
+          return res.status(400).json({ message: 'Username is required.' });
+        }
+        const user = await UserModel.findOne({ username });
+        if (!user) {
+          return res.status(404).json({ message: 'User not found.' });
+        }
+    
+        //IMPORTANT: check if the password is not included when sending the get request!
+        const { password, ...userData } = user.toObject();
+        res.json(userData);
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
+    });
+
 module.exports = router;
 
