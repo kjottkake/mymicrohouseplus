@@ -8,25 +8,24 @@ const router = express.Router();
 router.post('/model', async (req, res) => {
   try {
     //const { lat = 60.7922, lon = 10.6991 } = req.body.location;
-    const lat = '60.9722';
-    const lon = '10.6911';
+    const lat = '60.79';
+    const lon = '10.68';
   
     //IMPORTANT, check if lat and lon are provided
     if (!lat || !lon) {
       return res.status(400).json({ message: 'Latitude and longitude are required.' });
     }
 
-    const apiKey = 'key=09c7b9d06c7d426a960185107232610';
-    console.log('API Key:', apiKey); // Add this line
+    const apiKey = process.env.WEATHER_API_KEY;
     
-    const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=60.79,10.68,Mustad`; 
+    const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=60.79,10.68,Mustad&days=10`; 
 
     const forecastApiResponse = await axios.get(forecastApiUrl);
     const forecastData = forecastApiResponse.data;
     const forecastDay = forecastData.forecast.forecastday[0];
 
     console.log('Sunrise:', forecastDay.astro.sunrise);
-console.log('Sunset:', forecastDay.astro.sunset);
+    console.log('Sunset:', forecastDay.astro.sunset);
 
     const newData = new DataModel({
       location: {
