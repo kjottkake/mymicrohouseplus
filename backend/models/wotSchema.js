@@ -14,8 +14,8 @@ const weatherSchema = new mongoose.Schema({
 });
 
 const sunlightSchema = new mongoose.Schema({
-  sunrise: { type: Date },
-  sunset: { type: Date },
+  sunrise: { type: String },
+  sunset: { type: String },
 });
 
 const dataSchema = new mongoose.Schema(
