@@ -1,0 +1,21 @@
+/* src/components/Weather.css */
+.weather-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .weather-info {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    .current-weather,
+    .hourly-weather,
+    .daily-forecast {
+      margin-top: 15px;
+    }
+    
+    
+    
