@@ -18,7 +18,8 @@ router.post('/model', async (req, res) => {
 
     const apiKey = process.env.WEATHER_API_KEY;
     
-    const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=60.79,10.68,Mustad&days=10`; 
+    const forecastApiUrl = "https://api.open-meteo.com/v1/forecast?latitude=60.809&longitude=10.4089&current=temperature_2m,is_day,wind_speed_10m&hourly=temperature_2m,precipitation,rain,showers,snowfall,snow_depth,wind_speed_10m,uv_index,is_day,sunshine_duration&forecast_days=14"
+    //const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=60.79,10.68,Mustad&days=10`; 
 
     const forecastApiResponse = await axios.get(forecastApiUrl);
     const forecastData = forecastApiResponse.data;
