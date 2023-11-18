@@ -1,21 +1,62 @@
-/* src/components/Weather.css */
+/* Weather.css */
+
 .weather-container {
-      max-width: 600px;
-      margin: 0 auto;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    label {
+      margin-right: 10px;
+    }
+    
+    input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+    
+    button {
+      padding: 5px 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
     
     .weather-info {
       margin-top: 20px;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 5px;
     }
     
-    .current-weather,
-    .hourly-weather,
-    .daily-forecast {
-      margin-top: 15px;
+    .current-weather, .hourly-weather, .daily-forecast {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 10px 0;
     }
+    
+    h2, h3 {
+      color: #333;
+    }
+    
+    .hourly-weather ul, .daily-forecast ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    
+    .hourly-weather li, .daily-forecast li {
+      width: 200px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+    }
+    
+
     
     
     
