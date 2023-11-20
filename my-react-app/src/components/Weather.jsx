@@ -41,7 +41,7 @@ const Weather = () => {
 
       const { hourly, daily, current, ...rest } = response.data;
 
-      // Set weather data in state
+      // need to set the weather data in state. As it would NOT work when only some values were here...
       setWeatherData({
         hourly: hourly.time.map((time, index) => ({
           time: time,

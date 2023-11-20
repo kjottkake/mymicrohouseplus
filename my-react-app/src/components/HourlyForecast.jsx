@@ -17,7 +17,7 @@ const HourlyForecast = ({ hourlyData }) => {
               <th>Snow Depth (cm)</th>
               <th>Wind Speed (m/s)</th>
               <th>UV Index</th>
-              <th>Time of Day</th>
+              <th>Time of day</th>
               <th>Sunrise</th>
               <th>Sunset</th>
             </tr>
@@ -25,7 +25,7 @@ const HourlyForecast = ({ hourlyData }) => {
           <tbody>
             {hourlyData.map((hour, index) => (
               <tr key={index}>
-                <td>{hour.time}</td>
+                <td>{new Date(hour.time).toLocaleString('en-GB')}</td>
                 <td>{hour.temperature_2m}</td>
                 <td>{hour.precipitation}</td>
                 <td>{hour.rain}</td>
@@ -35,8 +35,8 @@ const HourlyForecast = ({ hourlyData }) => {
                 <td>{hour.wind_speed_10m}</td>
                 <td>{hour.uv_index}</td>
                 <td>{hour.is_day ? 'Day' : 'Night'}</td>
-                <td>{new Date(hour.sunrise).toLocaleTimeString()}</td>
-                <td>{new Date(hour.sunset).toLocaleTimeString()}</td>
+                <td>{new Date(hour.sunrise).toLocaleTimeString('en-GB')}</td>
+                <td>{new Date(hour.sunset).toLocaleTimeString('en-GB')}</td>
               </tr>
             ))}
           </tbody>
@@ -49,6 +49,7 @@ const HourlyForecast = ({ hourlyData }) => {
 };
 
 export default HourlyForecast;
+
 
 
 
