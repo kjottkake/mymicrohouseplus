@@ -55,6 +55,45 @@
       margin: 10px;
       text-align: center;
     }
+
+    /* Add this CSS to your existing stylesheet or create a new one */
+
+.hourly-forecast {
+      margin-top: 20px;
+    }
+    
+    .hourly-forecast h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .hourly-forecast ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .hourly-forecast li {
+      margin-bottom: 8px;
+    }
+    
+    .daily-forecast {
+      margin-top: 20px;
+    }
+    
+    .daily-forecast h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .daily-forecast ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .daily-forecast li {
+      margin-bottom: 15px;
+    }
+    
     
 
     
