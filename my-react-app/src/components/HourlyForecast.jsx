@@ -10,7 +10,6 @@ const HourlyForecast = ({ hourlyData }) => {
             <tr>
               <th>Time</th>
               <th>Temperature (°C)</th>
-              <th>Precipitation (mm)</th>
               <th>Rain (mm)</th>
               <th>Showers (mm)</th>
               <th>Snowfall (mm)</th>
@@ -18,8 +17,7 @@ const HourlyForecast = ({ hourlyData }) => {
               <th>Wind Speed (m/s)</th>
               <th>UV Index</th>
               <th>Time of day</th>
-              <th>Sunrise</th>
-              <th>Sunset</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -27,7 +25,6 @@ const HourlyForecast = ({ hourlyData }) => {
               <tr key={index}>
                 <td>{new Date(hour.time).toLocaleString('en-GB')}</td>
                 <td>{hour.temperature_2m}</td>
-                <td>{hour.precipitation}</td>
                 <td>{hour.rain}</td>
                 <td>{hour.showers}</td>
                 <td>{hour.snowfall}</td>
@@ -35,8 +32,6 @@ const HourlyForecast = ({ hourlyData }) => {
                 <td>{hour.wind_speed_10m}</td>
                 <td>{hour.uv_index}</td>
                 <td>{hour.is_day ? 'Day' : 'Night'}</td>
-                <td>{new Date(hour.sunrise).toLocaleTimeString('en-GB')}</td>
-                <td>{new Date(hour.sunset).toLocaleTimeString('en-GB')}</td>
               </tr>
             ))}
           </tbody>

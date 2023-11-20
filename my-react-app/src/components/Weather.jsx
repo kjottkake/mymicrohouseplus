@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Weather.css';
+import './HourlyForecast.css';
+import './DailyForecast.css';
 import HourlyForecast from './HourlyForecast';
 import DailyForecast from './DailyForecast';
 
@@ -33,7 +35,7 @@ const Weather = () => {
           latitude: latitude,
           longitude: longitude,
           current: 'temperature_2m,is_day,wind_speed_10m,uv_index,precipitation,snowfall',
-          hourly: 'temperature_2m,precipitation,rain,showers,snowfall,snow_depth,wind_speed_10m,uv_index,is_day',
+          hourly: 'temperature_2m,rain,showers,snowfall,snow_depth,wind_speed_10m,uv_index,is_day',
           daily: 'temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,rain_sum',
           daily_days: 14,
         },
@@ -46,7 +48,6 @@ const Weather = () => {
         hourly: hourly.time.map((time, index) => ({
           time: time,
           temperature_2m: hourly.temperature_2m[index],
-          precipitation: hourly.precipitation[index],
           rain: hourly.rain[index],
           showers: hourly.showers[index],
           snowfall: hourly.snowfall[index],
@@ -54,8 +55,6 @@ const Weather = () => {
           wind_speed_10m: hourly.wind_speed_10m[index],
           uv_index: hourly.uv_index[index],
           is_day: hourly.is_day[index],
-          sunrise,
-          sunset,
         })),
         daily: daily.time.map((day, index) => ({
           date: day,
@@ -76,7 +75,7 @@ const Weather = () => {
         ...rest,
       });
 
-      // Reverse Geocoding to get the location name
+      // reverse geocoding to get the location name
       const reverseGeocodingResponse = await axios.get(REVERSE_GEOCODING_URL, {
         params: {
           lat: latitude,
