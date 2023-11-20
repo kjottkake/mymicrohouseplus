@@ -68,7 +68,7 @@
     }
     
     .daily-forecast tbody tr:not(:last-child) {
-      border-bottom: 1px solid #ddd; /* Add a bottom border for all rows except the last one */
+      border-bottom: 1px solid #ddd; 
     }
 
     @media only screen and (max-width: 767px) {

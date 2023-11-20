@@ -27,17 +27,17 @@
     
     .weather-info  {
       margin-top: 20px;
-      /*this makes it weird*/
       display: flex;
       flex-direction: column;
+      /*remove align-items?*/
      align-items:stretch;
       margin: 0 auto;
 
     }
 
     .weather-info > * {
-      max-width: 100%; /* Adjust as needed */
-      box-sizing: border-box; /* Include padding and border in the total width */
+      max-width: 100%;
+      box-sizing: border-box; 
     }
     
     .current-weather {
@@ -46,13 +46,12 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       margin: 10px 0;
-      max-width: 400px; /* Add a maximum width for better readability */
-      margin: 0 auto; /* Center the element horizontally */
+      max-width: 400px; 
+      margin: 0 auto; 
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease-in-out;
     }
     
-    /* Add a hover effect for better user interaction */
     .current-weather:hover {
       transform: scale(1.05);
     }
@@ -64,11 +63,11 @@
     
    
     h2 {
-      color: #4caf50; /* Green color for h2 */
+      color: #4caf50;
     }
     
     h3 {
-      color: #333; /* Dark gray color for h3 */
+      color: #333; 
     }
     
     
@@ -80,6 +79,18 @@
         width: 100%;
         margin: 10px 0;
       }
+
+      label {
+            display: block;
+            margin-bottom: 5px; 
+            max-width: 100%;
+          }
+        
+          input {
+            width: 50%;
+            box-sizing: border-box; 
+            max-width: 100%;
+          }
     }
 
    

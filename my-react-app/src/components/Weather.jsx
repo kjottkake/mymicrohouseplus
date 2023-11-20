@@ -116,8 +116,6 @@ const Weather = () => {
         onChange={(e) => setLongitude(e.target.value)}
       />
 
-      <button onClick={getWeather}>Get Weather</button>
-
       {weatherData && (
         <div className="weather-info">
           <h2>{location}</h2>
