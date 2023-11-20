@@ -1,17 +1,24 @@
-// DailyForecast.jsx
 import React from 'react';
 
 const DailyForecast = ({ dailyData }) => {
   return (
     <div className="daily-forecast">
-      <h3>Daily Forecast (Next 7 Days)</h3>
+      <h3>Daily Forecast</h3>
       {dailyData && dailyData.length > 0 ? (
         <ul>
-          {dailyData.map((day, index) => (
-            <li key={index}>
-              Date: {day.time}, Max Temperature: {day.temperature_2m_max} °C, Min Temperature: {day.temperature_2m_min} °C, Apparent Max Temperature: {day.apparent_temperature_max} °C, Apparent Min Temperature: {day.apparent_temperature_min} °C, Precipitation Sum: {day.precipitation_sum} mm, Rain Sum: {day.rain_sum} mm
-            </li>
-          ))}
+        {dailyData.map((day, index) => (
+      <li key={index}>
+      Date: {day.date},
+      Max Temperature: {day.maxTemperature} °C,
+      Min Temperature: {day.minTemperature} °C,
+      Apparent Max Temperature: {day.apparentMaxTemperature} °C,
+      Apparent Min Temperature: {day.apparentMinTemperature} °C,
+      Precipitation Sum: {day.precipitationSum} mm,
+      Rain Sum: {day.rainSum} mm,
+      Sunrise: {new Date(day.sunrise).toLocaleTimeString()},
+      Sunset: {new Date(day.sunset).toLocaleTimeString()}
+  </li>
+      ))}
         </ul>
       ) : (
         <p>No daily forecast data available.</p>
@@ -21,6 +28,7 @@ const DailyForecast = ({ dailyData }) => {
 };
 
 export default DailyForecast;
+
 
 
 

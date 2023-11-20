@@ -1,4 +1,3 @@
-// HourlyForecast.jsx
 import React from 'react';
 
 const HourlyForecast = ({ hourlyData }) => {
@@ -6,13 +5,42 @@ const HourlyForecast = ({ hourlyData }) => {
     <div className="hourly-forecast">
       <h3>Hourly Forecast</h3>
       {hourlyData && hourlyData.length > 0 ? (
-        <ul>
-          {hourlyData.map((hour, index) => (
-            <li key={index}>
-              Time: {hour.time}, Temperature: {hour.temperature_2m} °C, Precipitation: {hour.precipitation} mm, Rain: {hour.rain} mm, Showers: {hour.showers} mm, Snowfall: {hour.snowfall} mm, Snow Depth: {hour.snow_depth} cm, Wind Speed: {hour.wind_speed_10m} m/s, UV Index: {hour.uv_index}, Is Day: {hour.is_day ? 'Yes' : 'No'}, Sunshine Duration: {hour.sunshine_duration} hours
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Temperature (°C)</th>
+              <th>Precipitation (mm)</th>
+              <th>Rain (mm)</th>
+              <th>Showers (mm)</th>
+              <th>Snowfall (mm)</th>
+              <th>Snow Depth (cm)</th>
+              <th>Wind Speed (m/s)</th>
+              <th>UV Index</th>
+              <th>Time of day</th>
+              <th>Sunrise</th>
+              <th>Sunset</th>
+            </tr>
+          </thead>
+          <tbody>
+            {hourlyData.map((hour, index) => (
+              <tr key={index}>
+                <td>{new Date(hour.time).toLocaleString('en-GB')}</td>
+                <td>{hour.temperature_2m}</td>
+                <td>{hour.precipitation}</td>
+                <td>{hour.rain}</td>
+                <td>{hour.showers}</td>
+                <td>{hour.snowfall}</td>
+                <td>{hour.snow_depth}</td>
+                <td>{hour.wind_speed_10m}</td>
+                <td>{hour.uv_index}</td>
+                <td>{hour.is_day ? 'Day' : 'Night'}</td>
+                <td>{new Date(hour.sunrise).toLocaleTimeString('en-GB')}</td>
+                <td>{new Date(hour.sunset).toLocaleTimeString('en-GB')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : (
         <p>No hourly forecast data available.</p>
       )}
@@ -21,6 +49,8 @@ const HourlyForecast = ({ hourlyData }) => {
 };
 
 export default HourlyForecast;
+
+
 
 
 
