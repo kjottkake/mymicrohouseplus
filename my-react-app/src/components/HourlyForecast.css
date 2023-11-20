@@ -106,7 +106,7 @@
     
       .hourly-forecast table {
         width: 100%;
-        overflow-x: auto; /* Add horizontal scroll for small screens */
+        overflow-x: auto; 
       }
     
       .hourly-forecast thead,
@@ -152,37 +152,45 @@
       }
     
       .hourly-forecast td:nth-of-type(3):before {
-        content: "Precipitation:";
-      }
-      .hourly-forecast td:nth-of-type(4):before {
         content: "Rain:";
       }
-      .hourly-forecast td:nth-of-type(5):before {
+
+      .hourly-forecast td:nth-of-type(4):before {
         content: "Showers:";
       }
-      .hourly-forecast td:nth-of-type(6):before {
+      .hourly-forecast td:nth-of-type(5):before {
         content: "Snowfall:";
       }
-      .hourly-forecast td:nth-of-type(7):before {
+      .hourly-forecast td:nth-of-type(6):before {
         content: "Snow Depth:";
       }
-      .hourly-forecast td:nth-of-type(8):before {
+      .hourly-forecast td:nth-of-type(7):before {
         content: "Wind Speed:";
       }
-      .hourly-forecast td:nth-of-type(9):before {
+      .hourly-forecast td:nth-of-type(8):before {
         content: "UV Index:";
       }
-      .hourly-forecast td:nth-of-type(10):before {
+      .hourly-forecast td:nth-of-type(9):before {
         content: "Time of day:";
       }
 
-      .hourly-forecast td:nth-of-type(11):before {
-        content: "Sunrise:";
-      
-      }
-      .hourly-forecast td:nth-of-type(12):before {
-        content: "Sunset:";
-      }
+      /*for temp*/
+      .hourly-forecast td:nth-of-type(2)::after {
+            content: """ °C";
+          }
+
+          /*for rain, showers and snowfall*/
+          .hourly-forecast td:nth-of-type(3)::after, .hourly-forecast td:nth-of-type(4)::after, .hourly-forecast td:nth-of-type(5)::after {
+            content: """ mm";
+          }
+
+          .hourly-forecast td:nth-of-type(6)::after {
+            content: """ cm";
+          }
+
+          .hourly-forecast td:nth-of-type(7)::after {
+            content: """ m/s";
+          }
     }
     
       

@@ -21,9 +21,10 @@ const HourlyForecast = ({ hourlyData }) => {
             </tr>
           </thead>
           <tbody>
+            {/*https://www.w3schools.com/jsref/jsref_tolocalestring.asp for modifying the localestring to show which day it is and same with getting 00:00 instead of 00:00:00 */}
             {hourlyData.map((hour, index) => (
               <tr key={index}>
-                <td>{new Date(hour.time).toLocaleString('en-GB')}</td>
+                 <td>{new Date(hour.time).toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', weekday: 'short', month: 'short', day: 'numeric' })}</td>
                 <td>{hour.temperature_2m}</td>
                 <td>{hour.rain}</td>
                 <td>{hour.showers}</td>
