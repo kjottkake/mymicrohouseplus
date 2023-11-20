@@ -1,7 +1,9 @@
-// src/components/Weather.js
+// Weather.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Weather.css';
+import HourlyForecast from './HourlyForecast'; // Import the HourlyForecast component
+import DailyForecast from './DailyForecast'; // Import the DailyForecast component
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -16,19 +18,22 @@ const Weather = () => {
           params: {
             latitude: latitude,
             longitude: longitude,
-            current: 'temperature_2m,is_day,wind_speed_10m',
+            current: 'temperature_2m,is_day,wind_speed_10m,uv_index,precipitation,snowfall,sunshine_duration',
             hourly: 'temperature_2m,precipitation,rain,showers,snowfall,snow_depth,wind_speed_10m,uv_index,is_day,sunshine_duration',
-            forecast_days: 14,
+            daily: 'temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,rain_sum',
+            daily_days: 14,
           },
         });
-        console.log(response.data); // Log the entire response to the console
-        setWeatherData(response.data);
+        console.log(response.data);
+    
+        const { hourly, daily, current, ...rest } = response.data;
+    
+        // store hourly, daily, and current data separately in the state
+        setWeatherData({ hourly: hourly.time, daily: daily.time, current, ...rest });
       } catch (error) {
         console.error('Error fetching weather data:', error);
       }
     };
-    
-
   return (
     <div className="weather-container">
       <label>Latitude:</label>
@@ -53,43 +58,20 @@ const Weather = () => {
         <div className="weather-info">
           <h2>Weather Information</h2>
           <div className="current-weather">
-            <h3>Current Weather</h3>
-            <p>Temperature: {weatherData.current.temperature_2m} °C</p>
-            <p>Is Day: {weatherData.current.is_day ? 'Yes' : 'No'}</p>
-            <p>Wind Speed: {weatherData.current.wind_speed_10m} m/s</p>
-          </div>
-
-          <div className="hourly-weather">
-  <h3>Hourly Forecast</h3>
-  {Array.isArray(weatherData.hourly) ? (
-    <ul>
-      {weatherData.hourly.map((hour, index) => (
-        <li key={index}>
-          Time: {hour.time}, Temperature: {hour.temperature_2m} °C
-          {/* Add more hourly details as needed */}
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No hourly data available</p>
-  )}
+      <h3>Current Weather</h3>
+      <p>Temperature: {weatherData.current.temperature_2m} °C</p>
+      <p>Is Day: {weatherData.current.is_day ? 'Yes' : 'No'}</p>
+      <p>Wind Speed: {weatherData.current.wind_speed_10m} m/s</p>
+      <p>UV Index: {weatherData.current.uv_index}</p>
+      <p>Precipitation: {weatherData.current.precipitation} mm</p>
+      <p>Snowfall: {weatherData.current.snowfall} mm</p>
+      <p>Sunshine Duration: {weatherData.current.sunshine_duration} hours</p>
 </div>
 
-<div className="daily-forecast">
-  <h3>Daily Forecast (Next 14 Days)</h3>
-  {Array.isArray(weatherData.hourly) ? (
-    <ul>
-      {weatherData.hourly.map((day, index) => (
-        <li key={index}>
-          Date: {day.time}, Max Temperature: {day.temperature_2m_max} °C, Min Temperature: {day.temperature_2m_min} °C
-          {/* Add more daily forecast details as needed */}
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No daily forecast data available</p>
-  )}
-</div>
+
+          {/* pass hourly and daily data as props */}
+          <HourlyForecast hourlyData={weatherData.hourly} />
+          <DailyForecast dailyData={weatherData.daily} />
         </div>
       )}
     </div>
@@ -97,6 +79,10 @@ const Weather = () => {
 };
 
 export default Weather;
+
+
+
+
 
 
 
