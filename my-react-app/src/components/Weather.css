@@ -1,5 +1,3 @@
-/* Weather.css */
-
 .weather-container {
       text-align: center;
       margin-top: 50px;
@@ -56,8 +54,6 @@
       text-align: center;
     }
 
-    /* Add this CSS to your existing stylesheet or create a new one */
-
     .hourly-forecast {
       margin-top: 20px;
     }
@@ -92,8 +88,6 @@
       transform: scale(1.05);
     }
     
-    /* DailyForecast.css */
-    
     .daily-forecast {
       margin-top: 20px;
     }
@@ -127,6 +121,30 @@
     .daily-forecast li:hover {
       transform: scale(1.05);
     }
+
+.hourly-forecast table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .hourly-forecast th, .hourly-forecast td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    .hourly-forecast th {
+      background-color: #f2f2f2;
+    }
+    
+    .hourly-forecast tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    .hourly-forecast tbody tr:hover {
+      background-color: #e1e1e1;
+    }
+    
     
     
 
