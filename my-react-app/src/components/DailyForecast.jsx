@@ -11,8 +11,6 @@ const DailyForecast = ({ dailyData }) => {
               <th>Date</th>
               <th>Max Temperature (°C)</th>
               <th>Min Temperature (°C)</th>
-              <th>Apparent Max Temperature (°C)</th>
-              <th>Apparent Min Temperature (°C)</th>
               <th>Precipitation Sum (mm)</th>
               <th>Rain Sum (mm)</th>
               <th>Sunrise</th>
@@ -25,8 +23,6 @@ const DailyForecast = ({ dailyData }) => {
                 <td>{new Date(day.date).toLocaleDateString('en-GB')}</td>
                 <td>{day.maxTemperature}</td>
                 <td>{day.minTemperature}</td>
-                <td>{day.apparentMaxTemperature}</td>
-                <td>{day.apparentMinTemperature}</td>
                 <td>{day.precipitationSum}</td>
                 <td>{day.rainSum}</td>
                 <td>{new Date(day.sunrise).toLocaleTimeString('en-GB')}</td>

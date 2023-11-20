@@ -36,7 +36,7 @@ const Weather = () => {
           longitude: longitude,
           current: 'temperature_2m,is_day,wind_speed_10m,uv_index,precipitation,snowfall',
           hourly: 'temperature_2m,rain,showers,snowfall,snow_depth,wind_speed_10m,uv_index,is_day',
-          daily: 'temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,rain_sum',
+          daily: 'temperature_2m_max,temperature_2m_min,precipitation_sum,rain_sum',
           daily_days: 14,
         },
       });
@@ -60,8 +60,6 @@ const Weather = () => {
           date: day,
           maxTemperature: daily.temperature_2m_max[index],
           minTemperature: daily.temperature_2m_min[index],
-          apparentMaxTemperature: daily.apparent_temperature_max[index],
-          apparentMinTemperature: daily.apparent_temperature_min[index],
           precipitationSum: daily.precipitation_sum[index],
           rainSum: daily.rain_sum[index],
           sunrise,
