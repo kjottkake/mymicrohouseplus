@@ -11,7 +11,6 @@ const DailyForecast = ({ dailyData }) => {
               <th>Date</th>
               <th>Max Temperature (°C)</th>
               <th>Min Temperature (°C)</th>
-              <th>Precipitation Sum (mm)</th>
               <th>Rain Sum (mm)</th>
               <th>Sunrise</th>
               <th>Sunset</th>
@@ -23,7 +22,6 @@ const DailyForecast = ({ dailyData }) => {
                 <td>{new Date(day.date).toLocaleDateString('en-GB')}</td>
                 <td>{day.maxTemperature}</td>
                 <td>{day.minTemperature}</td>
-                <td>{day.precipitationSum}</td>
                 <td>{day.rainSum}</td>
                 {/*https://www.w3schools.com/jsref/jsref_tolocalestring.asp for modifying the localestring to show which day it is and same with getting 00:00 instead of 00:00:00. Same with sunrise and sunset */}
                 <td>{new Date(day.sunrise).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false })}</td>

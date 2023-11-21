@@ -4,6 +4,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       margin: 10px 0;
+      background-color: rgba(210, 83, 146, 0.618);
     }
 
     .daily-forecast {
@@ -68,8 +69,15 @@
     }
     
     .daily-forecast tbody tr:not(:last-child) {
-      border-bottom: 1px solid #ddd; /* Add a bottom border for all rows except the last one */
+      border-bottom: 1px solid #ddd; 
     }
+
+    .daily-forecast h3,
+.daily-forecast th,
+.daily-forecast td,
+.daily-forecast li {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
 
     @media only screen and (max-width: 767px) {
       .daily-forecast table {
@@ -124,19 +132,22 @@
       }
     
       .daily-forecast td:nth-of-type(4):before {
-        content: "Precipitation Sum:";
-       
-      }
-    
-      .daily-forecast td:nth-of-type(5):before {
         content: "Rain Sum:";
       }
 
-      .daily-forecast td:nth-of-type(6):before{
+      .daily-forecast td:nth-of-type(5):before{
             content: "sunrise";
       }
 
-      .daily-forecast td:nth-of-type(7):before{
+      .daily-forecast td:nth-of-type(6):before{
             content: "sunset";
+      }
+
+      .daily-forecast td:nth-of-type(2)::after, .daily-forecast td:nth-of-type(3)::after{
+            content: """ °C";
+      }
+
+      .daily-forecast td:nth-of-type(4)::after{
+            content: """ mm";
       }
     }

@@ -1,12 +1,19 @@
+.hourly-forecast h3,
+.hourly-forecast th,
+.hourly-forecast td,
+.hourly-forecast li {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
 .hourly-weather {
       background-color: #f9f9f9;
       padding: 15px;
-      border: 1px solid #ddd;
+     border: 1px solid #ddd;
       border-radius: 8px;
       margin: 10px 0;
     }
 
-.hourly-weather ul, .daily-forecast ul {
+.hourly-weather ul {
       list-style-type: none;
       padding: 0;
       display: flex;
@@ -14,7 +21,7 @@
       justify-content: space-around;
     }
     
-    .hourly-weather li, .daily-forecast li {
+    .hourly-weather li {
       width: 200px;
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -25,7 +32,7 @@
 
     .hourly-forecast {
       margin-top: 20px;
-      background-color: #f9f9f9;
+      background-color: rgba(210, 83, 146, 0.618);
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
