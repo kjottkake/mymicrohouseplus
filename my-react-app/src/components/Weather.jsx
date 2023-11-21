@@ -34,7 +34,7 @@ const Weather = () => {
         params: {
           latitude: latitude,
           longitude: longitude,
-          current: 'temperature_2m,is_day,wind_speed_10m,uv_index,precipitation,snowfall',
+          current: 'temperature_2m,is_day,wind_speed_10m,uv_index,rain,snowfall',
           hourly: 'temperature_2m,rain,showers,snowfall,snow_depth,wind_speed_10m,uv_index,is_day',
           daily: 'temperature_2m_max,temperature_2m_min,rain_sum,',
           daily_days: 14,
@@ -118,16 +118,17 @@ const Weather = () => {
       {weatherData && (
         <div className="weather-info">
           <h2>{location}</h2>
+          <div className='current-weather'>
           <h3>Current Weather</h3>
           <p>Temperature: {weatherData.current.temperature_2m} °C</p>
           <p>Time of day: {weatherData.current.is_day ? 'Day' : 'Night '}</p>
           <p>Wind Speed: {weatherData.current.wind_speed_10m} m/s</p>
           <p>UV Index: {weatherData.current.uv_index}</p>
-          <p>Precipitation: {weatherData.current.precipitation} mm</p>
+          <p>Rain: {weatherData.current.rain} mm</p>
           <p>Snowfall: {weatherData.current.snowfall} mm</p>
           <p>Sunrise: {new Date(weatherData.current.sunrise).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
           <p>Sunset: {new Date(weatherData.current.sunset).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
-
+          </div>
           <HourlyForecast hourlyData={weatherData.hourly} />
           <DailyForecast dailyData={weatherData.daily} />
         </div>

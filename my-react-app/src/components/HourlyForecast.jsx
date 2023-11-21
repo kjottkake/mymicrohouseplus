@@ -1,4 +1,5 @@
 import React from 'react';
+import snowIcon from '../assets/snowycloud.webp'
 
 const HourlyForecast = ({ hourlyData }) => {
   return (
@@ -16,8 +17,7 @@ const HourlyForecast = ({ hourlyData }) => {
               <th>Snow Depth (cm)</th>
               <th>Wind Speed (m/s)</th>
               <th>UV Index</th>
-              <th>Time of day</th>
-              
+              <th>Time of day</th>              
             </tr>
           </thead>
           <tbody>
@@ -28,11 +28,23 @@ const HourlyForecast = ({ hourlyData }) => {
                 <td>{hour.temperature_2m}</td>
                 <td>{hour.rain}</td>
                 <td>{hour.showers}</td>
-                <td>{hour.snowfall}</td>
+                <td>{hour.snowfall > 0 ? (
+                  <>
+                  {hour.snowfall} mm 
+                  <img className="snow-icon"
+                  src={snowIcon}
+                  alt="snow"
+                                   
+                  />
+                  </>
+                ): (
+                  hour.snowfall
+                )}</td>
                 <td>{hour.snow_depth}</td>
                 <td>{hour.wind_speed_10m}</td>
                 <td>{hour.uv_index}</td>
                 <td>{hour.is_day ? 'Day' : 'Night'}</td>
+                  
               </tr>
             ))}
           </tbody>
