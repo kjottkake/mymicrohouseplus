@@ -33,8 +33,7 @@ const HourlyForecast = ({ hourlyData }) => {
                   {hour.snowfall} mm 
                   <img className="snow-icon"
                   src={snowIcon}
-                  alt="snow"
-                                   
+                  alt="snow"            
                   />
                   </>
                 ): (

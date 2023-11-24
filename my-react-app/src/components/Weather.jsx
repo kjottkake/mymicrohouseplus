@@ -129,8 +129,9 @@ const Weather = () => {
           <p>Sunrise: {new Date(weatherData.current.sunrise).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
           <p>Sunset: {new Date(weatherData.current.sunset).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
           </div>
-          <HourlyForecast hourlyData={weatherData.hourly} />
           <DailyForecast dailyData={weatherData.daily} />
+          <HourlyForecast hourlyData={weatherData.hourly} />
+          
         </div>
       )}
     </div>
