@@ -97,6 +97,12 @@
       background-color: #e1e1e1;
     }
 
+    .snow-icon{
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+    }
+
     @media only screen and (max-width: 390px) {
 
       .hourly-forecast tbody tr {
@@ -198,6 +204,7 @@
           .hourly-forecast td:nth-of-type(7)::after {
             content: """ m/s";
           }
+
     }
     
       

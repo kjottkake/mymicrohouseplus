@@ -32,6 +32,8 @@
       /*remove align-items?*/
      align-items:stretch;
       margin: 0 auto;
+      
+     
 
     }
 
@@ -41,7 +43,7 @@
     }
     
     .current-weather {
-      background-color: #f9f9f9;
+      background-color: rgba(83, 164, 210, 0.618);
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;

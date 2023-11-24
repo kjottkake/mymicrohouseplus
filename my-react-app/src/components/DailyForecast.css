@@ -2,12 +2,9 @@
       background-color: #f9f9f9;
       padding: 15px;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: 10px;
       margin: 10px 0;
       background-color: rgba(210, 83, 146, 0.618);
-    }
-
-    .daily-forecast {
       margin-top: 20px;
     }
     
@@ -76,6 +73,7 @@
 .daily-forecast th,
 .daily-forecast td,
 .daily-forecast li {
+
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
@@ -83,6 +81,7 @@
       .daily-forecast table {
         width: 100%;
         overflow-x: auto; 
+        border-radius: 8px;
       }
     
       .daily-forecast thead,
@@ -101,6 +100,7 @@
     
       .daily-forecast tr {
         margin-bottom: 15px;
+
       }
     
       .daily-forecast td {
@@ -108,6 +108,7 @@
         border-bottom: 1px solid #ddd;
         position: relative;
         padding-left: 50%;
+        border-radius: 5px;
       }
     
       .daily-forecast td:before {
@@ -150,4 +151,9 @@
       .daily-forecast td:nth-of-type(4)::after{
             content: """ mm";
       }
+
+      @media only screen and (max-width: 390px){
+            
+      }
+
     }
