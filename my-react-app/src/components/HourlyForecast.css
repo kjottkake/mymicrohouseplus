@@ -1,9 +1,12 @@
+
 .hourly-forecast h3,
 .hourly-forecast th,
 .hourly-forecast td,
 .hourly-forecast li {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
+
+
 
 .hourly-weather {
       background-color: #f9f9f9;
@@ -32,7 +35,7 @@
 
     .hourly-forecast {
       margin-top: 20px;
-      background-color: rgba(210, 83, 146, 0.618);
+      background-color: rgba(22, 132, 138, 0.618);
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -54,6 +57,7 @@
     }
     
     .hourly-forecast li {
+
       width: 200px;
       background-color: #f9f9f9;
       border: 1px solid #ddd;
@@ -63,6 +67,7 @@
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease-in-out;
+      
     }
     
     .hourly-forecast li:hover {
@@ -145,6 +150,7 @@
         border-bottom: 1px solid #ddd;
         position: relative;
         padding-left: 50%;
+       
       }
     
       .hourly-forecast td:before {
@@ -204,6 +210,7 @@
           .hourly-forecast td:nth-of-type(7)::after {
             content: """ m/s";
           }
+
 
     }
     
