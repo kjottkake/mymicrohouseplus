@@ -8,8 +8,8 @@ import DailyForecast from './DailyForecast';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [latitude, setLatitude] = useState('');
-  const [longitude, setLongitude] = useState('');
+  const [latitude, setLatitude] = useState('60.78925');
+  const [longitude, setLongitude] = useState('10.67254');
   const [location, setLocation] = useState('');
 
   const API_URL = 'https://api.open-meteo.com/v1/forecast';
@@ -29,7 +29,7 @@ const Weather = () => {
 
       const { results: { sunrise, sunset } } = sunriseSunsetResponse.data;
 
-      // Fetch weather data
+      // fetch weather data
       const response = await axios.get(API_URL, {
         params: {
           latitude: latitude,
