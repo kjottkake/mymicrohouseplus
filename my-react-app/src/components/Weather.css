@@ -65,7 +65,7 @@
     
    
     h2 {
-      color: #4caf50;
+      color: #4cafa0;
     }
     
     h3 {
@@ -92,6 +92,10 @@
             width: 50%;
             box-sizing: border-box; 
             max-width: 100%;
+          }
+
+          .current-weather:hover {
+            transform: scale(1.05);
           }
     }
 

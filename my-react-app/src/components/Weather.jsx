@@ -5,6 +5,7 @@ import './HourlyForecast.css';
 import './DailyForecast.css';
 import HourlyForecast from './HourlyForecast';
 import DailyForecast from './DailyForecast';
+import DailyWeatherSquare from './DailyWeatherToggle';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -129,7 +130,7 @@ const Weather = () => {
           <p>Sunrise: {new Date(weatherData.current.sunrise).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
           <p>Sunset: {new Date(weatherData.current.sunset).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
           </div>
-          <DailyForecast dailyData={weatherData.daily} />
+          <DailyWeatherSquare dailyData={weatherData.daily} />
           <HourlyForecast hourlyData={weatherData.hourly} />
           
         </div>
