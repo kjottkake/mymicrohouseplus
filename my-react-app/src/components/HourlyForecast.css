@@ -109,6 +109,23 @@
       margin-left: 5px;
     }
 
+    .hourly-weather-square {
+      cursor: pointer;
+      border: 2px solid #af614c; 
+      border-radius: 8px; 
+      padding: 10px;
+      margin: 15px; 
+      transition: border-color 0.3s ease-in-out; 
+    }
+    
+    .hourly-weather-square h3 {
+      margin: 0;
+    }
+    
+    .hourly-weather-square.expanded {
+      border-color: #333; 
+    }
+
     @media only screen and (max-width: 390px) {
 
       .hourly-forecast tbody tr {
