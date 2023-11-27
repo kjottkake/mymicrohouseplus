@@ -3,7 +3,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       margin: 10px 0;
-      background-color: rgba(22, 132, 138, 0.618);
+      background-color: #B0D9CB;
       margin-top: 20px;
     }
     
@@ -47,7 +47,7 @@
       border: 1px solid #ddd;
       padding: 8px;
       text-align: left;
-      background-color: rgba(242, 144, 23, 0.911);
+      background-color: #f2f2f2;
     }
     
     .daily-forecast th {

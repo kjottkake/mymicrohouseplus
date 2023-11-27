@@ -131,6 +131,7 @@ const Weather = () => {
           <p>Sunrise: {new Date(weatherData.current.sunrise).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
           <p>Sunset: {new Date(weatherData.current.sunset).toLocaleTimeString('en-gb', {hour: '2-digit', minute: '2-digit', hour12: false})}</p>
           </div>
+          <h4>Overview</h4>
           <DailyWeatherToggle dailyData={weatherData.daily} />
           <HourlyWeatherToggle hourlyData={weatherData.hourly} />
           

@@ -43,7 +43,7 @@
     }
     
     .current-weather {
-      background-color: rgba(83, 164, 210, 0.618);
+      background-color: #F1C8D0;
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -65,7 +65,7 @@
     
    
     h2 {
-      color: #4cafa0;
+      color: #1E425E;
     }
     
     h3 {
