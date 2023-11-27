@@ -35,7 +35,7 @@
 
     .hourly-forecast {
       margin-top: 20px;
-      background-color: rgba(22, 132, 138, 0.618);
+      background-color: #B0D9CB;;
       padding: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -78,6 +78,7 @@
       width: 100%;
       border-collapse: collapse;
       overflow-x: auto;
+     
     /*  border-radius: 10px; 
       overflow: hidden;
       background-color: #ffffff; */
@@ -87,7 +88,7 @@
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
-  background-color: #f2f2f2; 
+  background-color:rgba(250, 250, 250, 0.911);
 }
     
     .hourly-forecast th {
@@ -108,7 +109,26 @@
       margin-left: 5px;
     }
 
+    .hourly-weather-square {
+      cursor: pointer;
+      border: 2px solid #af614c; 
+      border-radius: 8px; 
+      padding: 10px;
+      margin: 15px; 
+      transition: border-color 0.3s ease-in-out; 
+    }
+    
+    .hourly-weather-square h3 {
+      margin: 0;
+    }
+    
+    .hourly-weather-square.expanded {
+      border-color: #333; 
+    }
+
     @media only screen and (max-width: 390px) {
+
+     
 
       .hourly-forecast tbody tr {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -124,7 +144,8 @@
     
       .hourly-forecast table {
         width: 100%;
-        overflow-x: auto; 
+        overflow-x: auto;
+        white-space: nowrap; 
       }
     
       .hourly-forecast thead,

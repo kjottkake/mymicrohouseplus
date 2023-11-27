@@ -3,7 +3,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       margin: 10px 0;
-      background-color: rgba(22, 132, 138, 0.618);
+      background-color: #B0D9CB;
       margin-top: 20px;
     }
     
@@ -73,6 +73,24 @@
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     
+    .daily-weather-square {
+      cursor: pointer;
+      border: 2px solid #af614c; 
+      border-radius: 8px; 
+      padding: 10px;
+      margin: 15px; 
+      transition: border-color 0.3s ease-in-out; 
+    }
+    
+    .daily-weather-square h3 {
+      margin: 0;
+    }
+    
+    .daily-weather-square.expanded {
+      border-color: #333; 
+    }
+    
+
     @media only screen and (max-width: 767px) {
       .daily-forecast table {
         width: 100%;
@@ -114,6 +132,10 @@
         padding-right: 10px;
         white-space: nowrap;
       }
+
+      .daily-forecast tbody tr:hover {
+            background-color: #e1e1e1; 
+          }
     
       .daily-forecast td:nth-of-type(1):before {
         content: "Date:";
@@ -148,6 +170,8 @@
         content: " mm";
       }
     
+      /*remember to make it responsive for 390px!*/
+
       @media only screen and (max-width: 390px) {
         .daily-forecast tbody tr {
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
