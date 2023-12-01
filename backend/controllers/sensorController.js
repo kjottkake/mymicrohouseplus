@@ -1,51 +1,24 @@
-require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const axios = require('axios');
 const DataModel = require('../models/wotSchema');
 const router = express.Router();
 
 router.post('/model', async (req, res) => {
   try {
-    //const { lat = 60.7922, lon = 10.6991 } = req.body.location;
-    const lat = '60.79';
-    const lon = '10.68';
-  
-    //IMPORTANT, check if lat and lon are provided
-    if (!lat || !lon) {
-      return res.status(400).json({ message: 'Latitude and longitude are required.' });
-    }
-
-    const apiKey = process.env.WEATHER_API_KEY;
-    
-    const forecastApiUrl = "https://api.open-meteo.com/v1/forecast?latitude=60.809&longitude=10.4089&current=temperature_2m,is_day,wind_speed_10m&hourly=temperature_2m,precipitation,rain,showers,snowfall,snow_depth,wind_speed_10m,uv_index,is_day,sunshine_duration&forecast_days=14"
-    //const forecastApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=09c7b9d06c7d426a960185107232610&q=60.79,10.68,Mustad&days=10`; 
+    const forecastApiUrl = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min,rain_sum&forecast_days=14";
 
     const forecastApiResponse = await axios.get(forecastApiUrl);
     const forecastData = forecastApiResponse.data;
-    const forecastDay = forecastData.forecast.forecastday[0];
-
-    console.log('Sunrise:', forecastDay.astro.sunrise);
-    console.log('Sunset:', forecastDay.astro.sunset);
 
     const newData = new DataModel({
       location: {
-        name: forecastData.location.name,
-        region: forecastData.location.region,
-        country: forecastData.location.country,
-        lat: forecastData.location.lat,
-        lon: forecastData.location.lon,
-        tz_id: forecastData.location.tz_id,
-        localtime_epoch: forecastData.location.localtime_epoch,
-        localtime: forecastData.location.localtime,
+        lat: forecastData.latitude,
+        lon: forecastData.longitude,
       },
       interiorTemperature: req.body.interiorTemperature,
       weather: {
-        temperature: forecastDay.day.avgtemp_c,
-        conditions: forecastDay.day.condition.text,
-        uvIndex: forecastDay.day.uv,
-        sunrise: forecastDay.astro.sunrise,
-        sunset: forecastDay.astro.sunset,
+        temperature: forecastData.hourly.temperature_2m[0], // Adjust this based on the actual structure of the API response
+        // Add other weather fields here based on the Open Meteo API response
       },
     });
 

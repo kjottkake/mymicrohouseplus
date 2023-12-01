@@ -7,35 +7,13 @@ const locationSchema = new mongoose.Schema({
 
 const weatherSchema = new mongoose.Schema({
   temperature: { type: Number },
-  conditions: { type: String },
-  uvIndex: { type: Number },
-  sunrise: { type: String }, 
-  sunset: { type: String }, 
-});
-
-const sunlightSchema = new mongoose.Schema({
-  sunrise: { type: String },
-  sunset: { type: String },
 });
 
 const dataSchema = new mongoose.Schema(
   {
     location: { type: locationSchema, required: true },
     interiorTemperature: { type: Number },
-    weather: {
-      type: weatherSchema,
-      required: true,
-      validate: {
-        validator: function (weather) {
-          
-          weather.sunrise = new Date(weather.sunrise);
-          weather.sunset = new Date(weather.sunset);
-          return true; 
-        },
-        message: 'Invalid weather data',
-      },
-    },
-    sunlight: { type: sunlightSchema },
+    weather: { type: weatherSchema },
   },
   { timestamps: true }
 );
@@ -43,6 +21,8 @@ const dataSchema = new mongoose.Schema(
 const DataModel = mongoose.model('Data', dataSchema);
 
 module.exports = DataModel;
+
+
 
 
 
