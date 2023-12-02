@@ -1,7 +1,2 @@
-/package.json
-/package-lock.json
 /node_modules
 /.env
-/backend/.env
-/my-react-app/package-lock.json
-/my-react-app/package.json

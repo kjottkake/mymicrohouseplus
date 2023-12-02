@@ -1,0 +1,31 @@
+{
+  "name": "mymicrohouseplus",
+  "version": "1.0.0",
+  "description": "For web of things purposes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjottkake/mymicrohouseplus.git"
+  },
+  "author": "Richard Langtinn and Jason Ji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kjottkake/mymicrohouseplus/issues"
+  },
+  "homepage": "https://github.com/kjottkake/mymicrohouseplus#readme",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "mongoose": "^5.13.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
